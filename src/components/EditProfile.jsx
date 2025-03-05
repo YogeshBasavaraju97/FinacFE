@@ -73,7 +73,7 @@ const EditProfile = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.put(`${BASE_URL}/user/${userId}`, userData, {
+      const res = await axios.put(`${BASE_URL}/${userId}`, userData, {
         withCredentials: true,
       });
       if (res?.status === 200) {

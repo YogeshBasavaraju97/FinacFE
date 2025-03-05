@@ -33,16 +33,13 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (passwordError) {
-      return;
-    }
     try {
       const passwordError = validatePassword(formData.password);
       setPasswordError(passwordError);
       if (passwordError) return;
 
       const response = await axios.post(
-        BASE_URL + "/user/login",
+        BASE_URL + "/login",
         {
           ...formData,
         },
