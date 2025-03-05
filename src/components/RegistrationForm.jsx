@@ -43,7 +43,7 @@ const RegistrationForm = () => {
       setPasswordError(passwordError);
       if (passwordError) return;
 
-      const response = await axios.post(BASE_URL + "/user/register", {
+      const response = await axios.post(BASE_URL + "/register", {
         ...formData,
       });
       if (response.status === 201) {

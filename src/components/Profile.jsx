@@ -16,7 +16,7 @@ const Profile = () => {
   const fetchData = async () => {
     if (user) return;
     try {
-      const res = await axios.get(BASE_URL + "/user/profile", {
+      const res = await axios.get(BASE_URL + "/profile", {
         withCredentials: true,
       });
       dispatch(addUser(res?.data));
@@ -44,7 +44,7 @@ const Profile = () => {
 
   const handleDelete = async () => {
     try {
-      const res = await axios.delete(BASE_URL + `/user/${userData.id}`, {
+      const res = await axios.delete(BASE_URL + `/${userData.id}`, {
         withCredentials: true,
       });
       // dispatch(addUser(null));
@@ -58,7 +58,7 @@ const Profile = () => {
 
   const handleLogout = async () => {
     try {
-      const res = await axios.post(BASE_URL + "/user/logout", {
+      const res = await axios.post(BASE_URL + "/logout", {
         withCredentials: true,
       });
       dispatch(addUser(null));

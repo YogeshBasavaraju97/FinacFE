@@ -24,7 +24,7 @@ const EditProfile = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`${BASE_URL}/user/profile`, {
+        const res = await axios.get(`${BASE_URL}/profile`, {
           withCredentials: true,
         });
         if (res?.status === 200) {
